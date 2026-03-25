@@ -3,23 +3,21 @@ using namespace std;
 
 class Shape {
 public:
-    virtual void draw() {
-        cout << "Base Shape\n";
-    }
+    virtual void draw() {};
 
-    virtual ~Shape() {} // good practice
+    virtual ~Shape() {} 
 };
 
 class Circle : public Shape {
 public:
-    void draw() override {
+    void draw()  {
         cout << "Circle Draw\n";
     }
 };
 
 class Rectangle : public Shape {
 public:
-    void draw() override {
+    void draw()  {
         cout << "Rectangle Draw\n";
     }
 };
