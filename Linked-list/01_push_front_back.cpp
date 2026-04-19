@@ -30,6 +30,28 @@ struct Node
 
     temp->next = newNode;
   }
+
+  void pop_Front(){
+    Node* temp = head;
+    if(head == NULL){
+      cout<<"\n List is empty!";
+      return;
+    }
+     head = temp->next;
+     temp->next = NULL;
+     delete temp;
+
+  }
+  void pop_back(){
+    Node* temp = head;
+    while(temp->next->next!=NULL){
+      temp = temp->next;
+    }
+    delete temp->next;
+    temp->next = NULL;
+  }
+
+
   void print_List(){
     Node* temp = head;
     while(temp != NULL){
@@ -47,6 +69,10 @@ int main() {
 
     push_back(4);
     push_back(5);
+    print_List();
+    pop_Front();
+    pop_back();
+    cout<<" \n new print\n";
     print_List();
 
     return 0;
